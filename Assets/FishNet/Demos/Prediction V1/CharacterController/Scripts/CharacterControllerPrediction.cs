@@ -45,8 +45,8 @@ namespace FishNet.Example.Prediction.CharacterControllers
         #endregion
 
         #region Serialized.
-        [SerializeField]
-        private float _moveRate = 5f;
+        [SerializeField] private float _moveRate = 5f;
+        [SerializeField] private GameObject cam;
         #endregion
 
         #region Private.
@@ -57,11 +57,16 @@ namespace FishNet.Example.Prediction.CharacterControllers
         {
             InstanceFinder.TimeManager.OnTick += TimeManager_OnTick;
             _characterController = GetComponent<CharacterController>();
+            //_characterController.
         }
 
         public override void OnStartClient()
         {
             _characterController.enabled = (base.IsServer || base.IsOwner);
+            if (IsOwner)
+            {
+                cam.SetActive(true);
+            }
         }
 
         private void OnDestroy()

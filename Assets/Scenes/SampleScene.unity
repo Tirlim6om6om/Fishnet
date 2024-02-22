@@ -3869,7 +3869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211a9f6ec51ddc14f908f5acc0cd0423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPrefab: {fileID: 4958573183237103324, guid: 805bd0676a7064845a22c4c5c298ead0, type: 3}
+  _playerPrefab: {fileID: 9117857247562382210, guid: c128214f8da440a48b94ce5e62ff539f, type: 3}
   _addToDefaultScene: 1
   Spawns:
   - {fileID: 1886512312}
@@ -4010,8 +4010,8 @@ MonoBehaviour:
   Transport: {fileID: 7488264960615858037}
   _intermediateLayer: {fileID: 0}
   _latencySimulator:
-    _enabled: 1
-    _simulateHost: 1
+    _enabled: 0
+    _simulateHost: 0
     _latency: 50
     _outOfOrder: 0
     _packetLoss: 0

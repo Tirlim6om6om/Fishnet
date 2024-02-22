@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DefaultNamespace;
 using FishNet;
 using FishNet.Component.Prediction;
+using FishNet.Example.Scened;
 using FishNet.Object;
 using FishNet.Object.Prediction;
 using FishNet.Transporting;
@@ -23,10 +24,10 @@ public class Ball : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player") &&
-            collision.gameObject.TryGetComponent(out Rigidbody player))
+        if (other.gameObject.CompareTag("Player") &&
+            other.gameObject.TryGetComponent(out CharacterController player))
         {
             Vector3 dir = player.velocity * force + new Vector3(0, jump, 0);
             _rb.AddForce(dir);
